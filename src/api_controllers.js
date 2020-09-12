@@ -52,11 +52,18 @@ exports.multiplyNumber = (req, res) => {
 exports.divisionNumber = (req, res) => {
   const { num1, num2 } = req.body;
 
-  const result = num1 / num2;
-
   if (num2 === 0) {
     return res.json({
       status: `error`,
+      message: `Cannot divide by zero`,
+    });
+  }
+  const result = num1 / num2;
+
+  if (result > 1000000) {
+    return res.json({
+      status: `error`,
+      message: `Overflow`,
     });
   }
   return res.json({
