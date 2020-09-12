@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
+const api_routes = require("./api_routes");
 const port = 3000;
 app.use(express.urlencoded());
 
@@ -11,12 +12,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(bodyParser.json());
 // your code goes here
+app.use("/", api_routes);
 
 app.get("/", (req, res) => {
-  res.send("Hello World");
+  res.send(200).send("Hello world!");
 });
-
-app.use("/api/", require("./routes"));
 // here
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
