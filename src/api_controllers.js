@@ -10,7 +10,7 @@ exports.addNumber = (req, res) => {
   }
   return res.json({
     status: `success`,
-    message: `the sum of given two number`,
+    message: `the sum of given two numbers`,
     add,
   });
 };
@@ -27,7 +27,7 @@ exports.subNumber = (req, res) => {
   }
   return res.json({
     status: `success`,
-    message: `the difference of given two number`,
+    message: `the difference of given two numbers`,
     sub,
   });
 };
@@ -60,7 +60,7 @@ exports.divisionNumber = (req, res) => {
       message: "Cannot divide by zero",
     });
   }
-  return res.status(200).json({
+  return res.json({
     status: `success`,
     message: `The division of given numbers`,
     division,
