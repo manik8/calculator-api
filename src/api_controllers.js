@@ -53,7 +53,7 @@ exports.divisionNumber = (req, res) => {
   const { num1, num2 } = req.body;
 
   if (num2 === 0) {
-    return res.json({
+    return res.status(200).json({
       status: `error`,
       message: `Cannot divide by zero`,
     });
@@ -61,12 +61,12 @@ exports.divisionNumber = (req, res) => {
   const result = num1 / num2;
 
   if (result > 1000000) {
-    return res.json({
+    return res.status(200).json({
       status: `error`,
       message: `Overflow`,
     });
   }
-  return res.json({
+  return res.status(200).json({
     status: `success`,
     message: `The division of given numbers`,
     result,
