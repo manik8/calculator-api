@@ -3,7 +3,7 @@ exports.dataType = (req, res, next) => {
   if (typeof num1 === "string" || typeof num2 === "string") {
     return res.status(400).json({
       status: `error`,
-      message: "invalid data types",
+      message: "Invalid data types",
     });
   }
   next();
