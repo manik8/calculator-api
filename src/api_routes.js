@@ -12,6 +12,6 @@ const { dataType } = require("./dataType");
 router.post("/add", dataType, addNumber);
 router.post("/sub", dataType, subNumber);
 router.post("/multiply", dataType, multiplyNumber);
-router.post("/division", dataType, divisionNumber);
+router.post("/divide", dataType, divisionNumber);
 
 module.exports = router;
