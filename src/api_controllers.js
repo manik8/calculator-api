@@ -57,7 +57,6 @@ exports.divisionNumber = (req, res) => {
   if (num2 === 0) {
     return res.json({
       status: `error`,
-      message: "Cannot divide by zero",
     });
   }
   return res.json({
